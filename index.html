@@ -10,13 +10,32 @@
 	<link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <main>
-	<script src="index.js"></script>
-        <a class="weatherwidget-io" href="https://forecast7.com/fr/46d556d63/le-mont-sur-lausanne/" data-label_1="LE MONT-SUR-LAUSANNE" data-label_2="WEATHER" data-theme="original" >LE MONT-SUR-LAUSANNE</a>
 <script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script> 
-    </main>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+           data-location-id="018059"
+           data-language="FR"
+           data-unit-system="METRIC"
+           data-skin="light"
+           data-widget-type="upcoming"
+           style="padding-bottom:22px;position:relative;"
+        >
+        </div>
   </body>
 </html>
 
